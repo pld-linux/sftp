@@ -45,10 +45,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_bindir}/sftp \
-   $RPM_BUILD_ROOT%{_bindir}/sftpc
+	$RPM_BUILD_ROOT%{_bindir}/sftpc
 mv $RPM_BUILD_ROOT%{_mandir}/man1/sftp.1 \
-   $RPM_BUILD_ROOT%{_mandir}/man1/sftpc.1
-
+	$RPM_BUILD_ROOT%{_mandir}/man1/sftpc.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
