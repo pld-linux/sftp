@@ -8,6 +8,7 @@ Group(pl):	Aplikacje/Sieciowe
 Source:		http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
 Patch0:		sftp-DESTDIR.patch
 Patch1:		sftp-LDFLAGS.patch
+BuildRequires:	readline-devel
 URL:		http://www.xbill.org/sftp/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
