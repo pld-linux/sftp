@@ -5,8 +5,6 @@ Version:	0.9.8
 Release:	1
 License:	GPL
 Group:		Applications/Networking
-Group(de):	Applikationen/Netzwerkwesen
-Group(pl):	Aplikacje/Sieciowe
 Source0:	http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
