@@ -1,6 +1,6 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
 Name:		sftp
-Version:	0.8.1
+Version:	0.9
 Release:	1
 License:	GPL
 Group:		Applications/Network
@@ -9,6 +9,7 @@ Source:		http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
 Patch0:		sftp-DESTDIR.patch
 Patch1:		sftp-LDFLAGS.patch
 BuildRequires:	readline-devel >= 4.1
+BuildRequires:	ncurses-devel >= 5.0
 URL:		http://www.xbill.org/sftp/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
