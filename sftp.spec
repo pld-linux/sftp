@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.xbill.org/sftp/download/old/%{name}-%{version}.tar.gz
+# Source0-md5:	9880c86ed928997da069bdb108bf4ad9
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
