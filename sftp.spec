@@ -48,13 +48,12 @@ mv $RPM_BUILD_ROOT%{_bindir}/sftp \
 mv $RPM_BUILD_ROOT%{_mandir}/man1/sftp.1 \
    $RPM_BUILD_ROOT%{_mandir}/man1/sftpc.1
 
-gzip -9nf README Changelog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README Changelog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
