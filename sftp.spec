@@ -41,6 +41,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+mv $RPM_BUILD_ROOT%{_bindir}/sftp \
+   $RPM_BUILD_ROOT%{_bindir}/sftpc
+mv $RPM_BUILD_ROOT%{_mandir}/man1/sftp.1 \
+   $RPM_BUILD_ROOT%{_mandir}/man1/sftpc.1
+
 gzip -9nf README Changelog
 
 %clean
