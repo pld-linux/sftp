@@ -1,19 +1,21 @@
-diff -Nru sftp-0.8/Makefile.in sftp-0.8.new/Makefile.in
---- sftp-0.8/Makefile.in	Tue Feb 15 07:19:20 2000
-+++ sftp-0.8.new/Makefile.in	Tue Feb 15 12:43:00 2000
-@@ -31,10 +31,11 @@
- sftpclient.o: sftpclient.c sftp.h
+diff -Nru sftp-0.9/Makefile.in sftp-0.9.new/Makefile.in
+--- sftp-0.9/Makefile.in	Sun Apr  2 20:46:12 2000
++++ sftp-0.9.new/Makefile.in	Sun Apr 16 09:22:22 2000
+@@ -34,12 +34,11 @@
+ netrc.o: netrc.c
  
  install:
+-	$(MKINSTALLDIRS) ${bindir}
 -	$(INSTALL) sftp ${bindir}/sftp
 -	$(INSTALL) rsftp ${bindir}/rsftp
 -	$(INSTALL) sftpserv ${bindir}/sftpserv
+-	$(MKINSTALLDIRS) ${mandir}/man1
 -	$(INSTALL) -m 644 sftp.1 ${mandir}/man1/sftp.1
-+	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1
-+	$(INSTALL) sftp $(DESTDIR)$(bindir)/sftp
-+	$(INSTALL) rsftp $(DESTDIR)$(bindir)/rsftp
-+	$(INSTALL) sftpserv $(DESTDIR)$(bindir)/sftpserv
-+	$(INSTALL) -m 644 sftp.1 $(DESTDIR)$(mandir)/man1/sftp.1
++	$(MKINSTALLDIRS) $(DESTDIR)${bindir} $(DESTDIR)${mandir}/man1
++	$(INSTALL) sftp $(DESTDIR)${bindir}/sftp
++	$(INSTALL) rsftp $(DESTDIR)${bindir}/rsftp
++	$(INSTALL) sftpserv $(DESTDIR)${bindir}/sftpserv
++	$(INSTALL) -m 644 sftp.1 $(DESTDIR)${mandir}/man1/sftp.1
  
  distclean::     
  	rm -f config.cache config.h config.log config.status
