@@ -20,7 +20,7 @@ sftp is an ftp replacement that runs over an ssh tunnel. Two programs
 are included - sftp and sftpserv. When sftp is run and a host is
 connected to (either by running 'sftp remotehost' or 'open remotehost'
 from the sftp prompt), an ssh connection is initiated to the remote
-host, and sftpserv is run. From within sftp, all of the normal ftp
+host, and sftpserv is run. From within sftp, all of the normal FTP
 commands are present: open, close, get, put, pwd, cd, ls, lcd, quit,
 etc. There's also exec, which runs a program on the remote end.
 
