@@ -1,7 +1,7 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
 Summary(pl):	Zamiennik ftp dzia³aj±cy poprzez tunel rsh/ssh
 Name:		sftp
-Version:	0.9.7
+Version:	0.9.8
 Release:	1
 License:	GPL
 Group:		Applications/Networking
