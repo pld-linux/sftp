@@ -1,9 +1,10 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
 Name:		sftp
 Version:	0.9.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
@@ -26,7 +27,6 @@ etc. There's also exec, which runs a program on the remote end.
 %patch0 -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
@@ -35,8 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-gzip -9nf README Changelog \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf README Changelog
 
 %clean
 rm -rf $RPM_BUILD_ROOT 
