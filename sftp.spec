@@ -9,6 +9,8 @@ Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.1
 BuildRequires:	ncurses-devel >= 5.2
 URL:		http://www.xbill.org/sftp/
@@ -32,6 +34,8 @@ dwa programy - sftp i sftpserv.
 %patch0 -p1
 
 %build
+aclocal
+autoconf
 %configure
 %{__make}
 
