@@ -32,7 +32,7 @@ dwa programy - sftp i sftpserv.
 %patch0 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
