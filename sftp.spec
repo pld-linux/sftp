@@ -51,7 +51,7 @@ mv $RPM_BUILD_ROOT%{_mandir}/man1/sftp.1 \
 gzip -9nf README Changelog
 
 %clean
-rm -rf $RPM_BUILD_ROOT 
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
