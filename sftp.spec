@@ -1,73 +1,48 @@
-%define version 0.8
-%define release 1
-%define name sftp
-%define prefix /usr
-
-Summary: sftp: a ftp-replacement over an rsh/ssh tunnel
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Copyright: GPL
-Group: Applications/Internet
-Source: sftp-%{version}.tar.gz
-BuildRoot: /var/tmp/%{name}-%{version}-root
-Url: http://www.xbill.org/sftp
-Packager: Brian Wellington <bwelling@xbill.org>
+Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
+Name:		sftp
+Version:	0.8
+Release:	1
+License:	GPL
+Group:		Applications/Network
+Group(pl):	Aplikacje/Sieciowe
+Source:		http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
+Patch0:		sftp-DESTDIR.patch
+Patch1:		sftp-LDFLAGS.patch
+URL:		http://www.xbill.org/sftp/
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
-sftp is an ftp replacement that runs over an ssh tunnel. Two programs
-are included - sftp and sftpserv. When sftp is run and a host is
-connected to (either by running 'sftp remotehost' or 'open remotehost'
-from the sftp prompt), an ssh connection is initiated to the remote
-host, and sftpserv is run.
-
-From within sftp, all of the normal ftp commands are present: open,
+sftp is an ftp replacement that runs over an ssh tunnel. Two programs are
+included - sftp and sftpserv. When sftp is run and a host is connected to
+(either by running 'sftp remotehost' or 'open remotehost' from the sftp
+prompt), an ssh connection is initiated to the remote host, and sftpserv is
+run.  From within sftp, all of the normal ftp commands are present: open,
 close, get, put, pwd, cd, ls, lcd, quit, etc. There's also exec, which runs
 a program on the remote end.
 
-%changelog
-* Mon Feb 14 2000 Brian Wellington <bwelling@xbill.org>
-- updated to 0.8
-- use make install now
-
-* Tue Jan 11 2000 Brian Wellington <bwelling@xbill.org>
-- updated to 0.7
-
-* Wed Dec 28 1999 Brian Wellington <bwelling@xbill.org>
-- updated to 0.6
-
-* Sun Dec 26 1999 Brian Wellington <bwelling@xbill.org>
-- updated to 0.5
-
-* Fri Nov 26 1999 Chris Green <sprout@dok.org>
-- updated to 0.4
-
-* Mon Nov 22 1999 Chris Green <sprout@dok.org>
-- created spec
-
 %prep
-rm -rf $RPM_BUILD_ROOT
-%setup
+%setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-./configure --prefix=%{prefix} 
-make CFLAGS="$RPM_OPT_FLAGS" 
-
+LDFLAGS="-s"; export LDFLAGS
+%configure
+make
 
 %install
-mkdir -p $RPM_BUILD_ROOT/usr/bin
-mkdir -p $RPM_BUILD_ROOT/usr/man/man1
-make ROOT="$RPM_BUILD_ROOT" install
+rm -rf $RPM_BUILD_ROOT 
 
-%files
-%defattr(-,root,root)
-%doc README Changelog
-/usr/bin/sftp
-/usr/bin/rsftp
-/usr/bin/sftpserv
-/usr/man/man1/sftp.1
+make DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf README Changelog \
+	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT 
 
-# end of file
+%files
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
