@@ -10,7 +10,7 @@ Patch0:		sftp-DESTDIR.patch
 Patch1:		sftp-LDFLAGS.patch
 BuildRequires:	readline-devel >= 4.1
 URL:		http://www.xbill.org/sftp/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 sftp is an ftp replacement that runs over an ssh tunnel. Two programs are
