@@ -1,25 +1,25 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
 Name:		sftp
-Version:	0.9.5
-Release:	2
+Version:	0.9.6
+Release:	1
 License:	GPL
 Group:		Applications/Networking
 Group(pl):	Aplikacje/Sieciowe
 Source0:	http://www.xbill.org/sftp/download/%{name}-%{version}.tar.gz
-Patch0:		sftp-DESTDIR.patch
+Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	readline-devel >= 4.1
 BuildRequires:	ncurses-devel >= 5.0
 URL:		http://www.xbill.org/sftp/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-sftp is an ftp replacement that runs over an ssh tunnel. Two programs are
-included - sftp and sftpserv. When sftp is run and a host is connected to
-(either by running 'sftp remotehost' or 'open remotehost' from the sftp
-prompt), an ssh connection is initiated to the remote host, and sftpserv is
-run. From within sftp, all of the normal ftp commands are present: open,
-close, get, put, pwd, cd, ls, lcd, quit, etc. There's also exec, which runs
-a program on the remote end.
+sftp is an ftp replacement that runs over an ssh tunnel. Two programs
+are included - sftp and sftpserv. When sftp is run and a host is
+connected to (either by running 'sftp remotehost' or 'open remotehost'
+from the sftp prompt), an ssh connection is initiated to the remote
+host, and sftpserv is run. From within sftp, all of the normal ftp
+commands are present: open, close, get, put, pwd, cd, ls, lcd, quit,
+etc. There's also exec, which runs a program on the remote end.
 
 %prep
 %setup -q
