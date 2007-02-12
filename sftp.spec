@@ -1,5 +1,5 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
-Summary(pl):	Zamiennik ftp dzia³aj±cy poprzez tunel rsh/ssh
+Summary(pl.UTF-8):   Zamiennik ftp dziaÅ‚ajÄ…cy poprzez tunel rsh/ssh
 Name:		sftp
 Version:	0.9.9
 Release:	4
@@ -24,8 +24,8 @@ host, and sftpserv is run. From within sftp, all of the normal FTP
 commands are present: open, close, get, put, pwd, cd, ls, lcd, quit,
 etc. There's also exec, which runs a program on the remote end.
 
-%description -l pl
-sftp jest zamiennikiem ftp dzia³aj±cym poprzez tunel ssh. Do³±czone s±
+%description -l pl.UTF-8
+sftp jest zamiennikiem ftp dziaÅ‚ajÄ…cym poprzez tunel ssh. DoÅ‚Ä…czone sÄ…
 dwa programy - sftp i sftpserv.
 
 %prep
