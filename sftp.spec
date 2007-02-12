@@ -1,5 +1,5 @@
 Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
-Summary(pl.UTF-8):   Zamiennik ftp działający poprzez tunel rsh/ssh
+Summary(pl.UTF-8):	Zamiennik ftp działający poprzez tunel rsh/ssh
 Name:		sftp
 Version:	0.9.9
 Release:	4
