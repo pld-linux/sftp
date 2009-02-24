@@ -1,0 +1,11 @@
+--- sftp-0.9.9/recvfile.c~	2001-05-22 06:21:07.000000000 +0200
++++ sftp-0.9.9/recvfile.c	2009-02-24 08:33:29.931193752 +0100
+@@ -54,7 +54,7 @@
+ 
+ 				data->name = strdup(m.data);
+ 				data->fd = open(data->name,
+-						O_WRONLY|O_CREAT|O_TRUNC);
++						O_WRONLY|O_CREAT|O_TRUNC, 0600);
+ 				status = (data->fd >= 0);
+ 				send_message(sock, _data_message(c, FILEOK,
+ 								 &status, 1));
