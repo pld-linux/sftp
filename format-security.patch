@@ -1,0 +1,11 @@
+--- sftp-0.9.9/sftp.c~	2001-03-06 22:42:17.000000000 +0100
++++ sftp-0.9.9/sftp.c	2016-10-20 09:17:59.296238176 +0200
+@@ -211,7 +211,7 @@
+ 	if (nargs == 1) {
+ 		printf("Supported commands are:\n");
+ 		for (i = 0; action[i].str != NULL; i++) {
+-			printf(action[i].str);
++			puts(action[i].str);
+ 			if (i % 8 == 7)
+ 				putchar('\n');
+ 			else

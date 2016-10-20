@@ -2,13 +2,14 @@ Summary:	sftp: a ftp-replacement over an rsh/ssh tunnel
 Summary(pl.UTF-8):	Zamiennik ftp działający poprzez tunel rsh/ssh
 Name:		sftp
 Version:	0.9.9
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.xbill.org/sftp/download/old/%{name}-%{version}.tar.gz
 # Source0-md5:	9880c86ed928997da069bdb108bf4ad9
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-open.patch
+Patch2:		format-security.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.1
@@ -33,6 +34,7 @@ dwa programy - sftp i sftpserv.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__aclocal}
